@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World Multilingual</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f7f7fb;
+    }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #6c63ff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #5751d9;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="helloText">Hello, world!</h1>
+  <button onclick="changeText()">Change</button>
+
+  <script>
+    const greetings = [
+      "Hello, world!",           // English
+      "नमस्ते दुनिया!",          // Hindi
+      "हॅलो वर्ल्ड!",             // Marathi
+      "ഹലോ വേൾഡ്!",              // Malayalam
+      "హలో వరల్డ్!",               // Telugu
+      "Bonjour le monde!",       // French
+      "Hola mundo!",             // Spanish
+      "こんにちは世界！",             // Japanese
+      "你好，世界！",                 // Chinese
+      "안녕하세요, 세계!"             // Korean
+    ];
+
+    let index = 0;
+
+    function changeText() {
+      index = (index + 1) % greetings.length;
+      document.getElementById("helloText").innerText = greetings[index];
+    }
+  </script>
+</body>
+</html>
